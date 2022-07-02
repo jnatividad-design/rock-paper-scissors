@@ -1,14 +1,4 @@
 
-
-//Computer picks random number to pick rock,paper,scissors 
-let computerChoice = Math.floor(Math.random()*3);
-if ((computerChoice) == 0) {computerChoice=('rock');
-}
-else if ((computerChoice) == 1) {computerChoice=('paper');
-}
-else {computerChoice =('scissors');
-}
-
 //Function to determine winner
 function playRound (playerSelection, computerChoice) {
     if (playerSelection == computerChoice) {
@@ -21,7 +11,7 @@ function playRound (playerSelection, computerChoice) {
         }
         else {
             userCount++;
-            return "You Win!"
+            return "You Win! Rock Beats Scissors"
         }
     }
     if (playerSelection == "paper") {
@@ -31,7 +21,7 @@ function playRound (playerSelection, computerChoice) {
         }
         else {
             userCount++;
-            return "You Win!"
+            return "You Win! Paper beats Rock"
         }
     }
     if (playerSelection == "scissors") {
@@ -41,7 +31,7 @@ function playRound (playerSelection, computerChoice) {
         }
         else {
             userCount++;
-            return "You Win!"
+            return "You Win! Scissorts beats Paper"
         }
     }
 }
@@ -51,10 +41,23 @@ let userCount = parseInt(0);
 let computerCount = parseInt(0);
 function game () {
     for (let i = 0; i < 5; i++) {
+
+//Player prompt for Rock,Paper, Scissors
 let playerSelection = prompt ('Rock, Paper, or Scissors?').toLowerCase(); 
+
+//Computer picks random number to pick rock,paper,scissors 
+let computerChoice = Math.floor(Math.random()*3);
+    if ((computerChoice) == 0) {computerChoice=('rock');
+}
+    else if ((computerChoice) == 1) {computerChoice=('paper');
+}
+    else {computerChoice =('scissors');
+}
+
+//Console displays
     console.log (playRound(playerSelection, computerChoice));
     console.log ("your score =" + userCount);
-    console.log ("Computer's score" + computerCount);
+    console.log ("Computer's score =" + computerCount);
      } 
     }
 console.log (game())
