@@ -40,10 +40,10 @@ function playRound (playerSelection, computerChoice) {
 let userCount = parseInt(0);
 let computerCount = parseInt(0);
 function game () {
-    for (let i = 0; i < 5; i++) {
+   
 
 //Player prompt for Rock,Paper, Scissors
-let playerSelection = prompt ('Rock, Paper, or Scissors?').toLowerCase(); 
+//let playerSelection = prompt ('Rock, Paper, or Scissors?').toLowerCase(); 
 
 //Computer picks random number to pick rock,paper,scissors 
 let computerChoice = Math.floor(Math.random()*3);
@@ -58,6 +58,5 @@ let computerChoice = Math.floor(Math.random()*3);
     console.log (playRound(playerSelection, computerChoice));
     console.log ("your score =" + userCount);
     console.log ("Computer's score =" + computerCount);
-     } 
     }
 console.log (game())

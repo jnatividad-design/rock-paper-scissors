@@ -1,0 +1,66 @@
+body { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fde1db ;
+    font-family: 'Times New Roman', Times, serif;
+}
+.container {
+    background-color: #c5f5d7;
+    height: 200px;
+    width: 1000px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: black;
+    border-radius: 10px;
+    border-style: solid;
+}
+
+#hero-img {
+    block-size: 10em;
+    margin: 20px 50px 50px 50px;
+}
+
+#choice {
+    font-weight: bolder;
+    font-size: 20px;
+}
+button { 
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100px;
+    width: 200px;
+    background-color: #f8ff1d;
+    border-radius: 10px;
+}
+
+#img-hover {
+    width: 50px;
+    height: 50px;
+    
+  }
+  
+  
+  button:hover {
+    background-color: #ffcd59;
+  }
+
+  .scoreboard {
+    display: flex;
+    justify-content: space-between;
+    background-color:#c5f5d7 ;
+    border: black;
+    border-radius: 10px;
+    border-style: solid;
+    margin: 50px;
+  }
+
+  .playerScore {
+   margin: 40px 70px;
+  }
+  .computerScore {
+    margin:40px 70px;
+  }
