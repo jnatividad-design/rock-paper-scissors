@@ -5,6 +5,7 @@ body {
     flex-direction: column;
     background-color: #fde1db ;
     font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
 }
 .container {
     background-color: #c5f5d7;
@@ -23,11 +24,11 @@ body {
     margin: 20px 50px 50px 50px;
 }
 
-#choice {
+#pick {
     font-weight: bolder;
     font-size: 20px;
 }
-button { 
+.btn { 
     display: inline-flex;
     align-items: center;
     justify-content: space-evenly;
@@ -36,7 +37,11 @@ button {
     background-color: #f8ff1d;
     border-radius: 10px;
 }
-
+.reset {
+    background-color: #f8ff1d;
+    border-radius: 6px;
+    margin: 0 0 -30px 0;
+}
 #img-hover {
     width: 50px;
     height: 50px;
@@ -58,9 +63,7 @@ button {
     margin: 50px;
   }
 
-  .result {
-    font-weight: bolder;
-  }
+
   .playerScore {
    margin: 40px 70px;
   }

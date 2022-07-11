@@ -4,86 +4,124 @@ let computerCount = parseInt(0);
 //Access to buttons and text within html file
 const btn = document.getElementsByClassName('btn');
 const rockButton = document.getElementById('rock');
-const paperButton = document.getElementById("paper");
+const paperButton = document.getElementById('paper');
     console.log(document.getElementById('paper')!==null)
-const scissorsButton = document.getElementById("scissors");
-const playerScore = document.getElementsByClassName ("playerScore")[0];
-console.log(document.getElementsByClassName("playerScore") !==null)
-const computerScore = document.getElementsByClassName("computerScore")[0];
-const result = document.getElementsByClassName("result")[0];
+const scissorsButton = document.getElementById('scissors');
+const playerScore = document.getElementsByClassName ('playerScore')[0];
+console.log(document.getElementsByClassName('playerScore') !==null)
+const computerScore = document.getElementsByClassName('computerScore')[0];
+console.log(document.getElementsByClassName('playerScore') !==null)
+const result = document.getElementsByClassName('result')[0];
+console.log(document.getElementsByClassName('result') !==null)
+const reset = document.getElementsByClassName('reset') [0];
 
-//Computer picks random number to pick rock,paper,scissors 
-let computerChoice = Math.floor(Math.random()*3);
-    if ((computerChoice) == 0) {computerChoice=('rock');
-}
-    else if ((computerChoice) == 1) {computerChoice=('paper');
-}
-    else {computerChoice =('scissors');
-}
-//button functionality to game
-rockButton.addEventListener("click", () => {
-    let playerSelection = "rock";
-    playRound(playerSelection,computerChoice);
-    console.log('rock button clicked')});
-paperButton.addEventListener("click", () =>{
-    let playerSelection = "paper";
-    playRound(playerSelection,computerChoice);
-    console.log('paper button clicked')});
-scissorsButton.addEventListener("click", () =>{
-    let playerSelection = "scissors";
-    playRound(playerSelection,computerChoice);
-    console.log('scissors button clicked')
+//reset button
+reset.addEventListener('click', () =>{
+    location.reload()
 });
 
+
+//Computer picks random number to pick rock,paper,scissors 
+function computerPlay() {
+let num= Math.floor(Math.random()*3);
+    if (num == 0) {return 'rock';
+}
+    else if (num == 1) {return 'paper';
+}
+    else {return 'scissors';
+}
+}
+
+
+//button functionality to game
+rockButton.addEventListener('click', () => {
+    let playerSelection = 'rock';
+    let computerChoice = computerPlay()
+   console.log(computerChoice);
+    playRound(playerSelection,computerChoice);
+    console.log('rock button clicked')});
+paperButton.addEventListener('click', () =>{
+    let playerSelection = 'paper';
+    let computerChoice = computerPlay();
+    console.log(computerChoice);
+    playRound(playerSelection,computerChoice);
+    console.log('paper button clicked')});
+    scissorsButton.addEventListener('click', () =>{
+        let playerSelection = 'scissors';
+        let computerChoice = computerPlay();
+        console.log(computerChoice);
+        playRound(playerSelection,computerChoice);
+        console.log('scissors button clicked')
+    });
+    
+    //Result displays in scoreboard
+    function playerWin () {
+    userCount++;
+    playerScore.textContent=('Player Score:' + userCount);
+    }
+    function computerWin() {
+    computerCount++;
+    computerScore.textContent=('Computer score:' + computerCount);
+    }
 //Function to determine winner
 function playRound (playerSelection, computerChoice) {
     if (playerSelection == computerChoice) {
-        return "Its a Tie!"
+        result.textContent='It\'s a Tie!'; //return 'Its a Tie!'
     }
-    if (playerSelection == "rock") {
-        if (computerChoice == "paper") {
-            computerCount++;
-            return "You Lose! Paper Beats Rock";
+    else if (playerSelection == 'rock') {
+        if (computerChoice == 'paper') {
+            computerWin ();
+            result.textContent='Result: You Lose! Paper Beats Rock'; //return 'You Lose! Paper Beats Rock';
         }
         else {
-            userCount++;
-            return "You Win! Rock Beats Scissors"
+            playerWin();
+            result.textContent='Result: You Win! Rock Beats Scissors';
         }
     }
-    if (playerSelection == "paper") {
-        if (computerChoice == "scissors") {
-            computerCount++;
-            return "You Lose! Scissors beats Paper"
+    else if (playerSelection == 'paper') {
+        if (computerChoice == 'scissors') {
+            computerWin ()
+            //computerCount++;
+            result.textContent='Result: You Lose! Scissors beats Paper';
         }
         else {
-            userCount++;
-            return "You Win! Paper beats Rock"
+            playerWin();
+            //userCount++;
+            result.textContent='Result: You Win! Paper beats Rock';
         }
     }
-    if (playerSelection == "scissors") {
-        if (computerChoice == "rock") {
-            computerCount++;
-            return "You Lose! Rock beats Scissors"
+    else if (playerSelection == 'scissors') {
+        if (computerChoice == 'rock') {
+            computerWin ()
+            //computerCount++;
+            result.textContent='Result: You Lose! Rock beats Scissors';
         }
         else {
-            userCount++;
-            return "You Win! Scissorts beats Paper"
+            playerWin();
+            //userCount++;
+            result.textContent='Result: You Win! Scissorts beats Paper';
         }
     }
+    if (userCount >= 5) {
+        result.textContent = 'Game Over: Player Wins!';
+    } 
+    if (computerCount >= 5) {
+        result.textContent = 'Game Over: Computer Wins!';
+    }else {
+        null
+     }
+    
 }
 
+//Game Over
 function game () {
-   
+ 
 
 //Player prompt for Rock,Paper, Scissors
 
 //let playerSelection = prompt ('Rock, Paper, or Scissors?').toLowerCase(); 
 
-//Result Displays 
 
-//Console displays
-    console.log (playRound(playerSelection, computerChoice));
-    console.log ("your score =" + userCount);
-    console.log ("Computer's score =" + computerCount);
+
     }
 console.log (game())
