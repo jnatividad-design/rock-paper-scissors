@@ -1,3 +1,39 @@
+//Scorecard
+let userCount = parseInt(0);
+let computerCount = parseInt(0);
+//Access to buttons and text within html file
+const btn = document.getElementsByClassName('btn');
+const rockButton = document.getElementById('rock');
+const paperButton = document.getElementById("paper");
+    console.log(document.getElementById('paper')!==null)
+const scissorsButton = document.getElementById("scissors");
+const playerScore = document.getElementsByClassName ("playerScore")[0];
+console.log(document.getElementsByClassName("playerScore") !==null)
+const computerScore = document.getElementsByClassName("computerScore")[0];
+const result = document.getElementsByClassName("result")[0];
+
+//Computer picks random number to pick rock,paper,scissors 
+let computerChoice = Math.floor(Math.random()*3);
+    if ((computerChoice) == 0) {computerChoice=('rock');
+}
+    else if ((computerChoice) == 1) {computerChoice=('paper');
+}
+    else {computerChoice =('scissors');
+}
+//button functionality to game
+rockButton.addEventListener("click", () => {
+    let playerSelection = "rock";
+    playRound(playerSelection,computerChoice);
+    console.log('rock button clicked')});
+paperButton.addEventListener("click", () =>{
+    let playerSelection = "paper";
+    playRound(playerSelection,computerChoice);
+    console.log('paper button clicked')});
+scissorsButton.addEventListener("click", () =>{
+    let playerSelection = "scissors";
+    playRound(playerSelection,computerChoice);
+    console.log('scissors button clicked')
+});
 
 //Function to determine winner
 function playRound (playerSelection, computerChoice) {
@@ -36,23 +72,14 @@ function playRound (playerSelection, computerChoice) {
     }
 }
 
-//Loop to have rounds in the game 
-let userCount = parseInt(0);
-let computerCount = parseInt(0);
 function game () {
    
 
 //Player prompt for Rock,Paper, Scissors
+
 //let playerSelection = prompt ('Rock, Paper, or Scissors?').toLowerCase(); 
 
-//Computer picks random number to pick rock,paper,scissors 
-let computerChoice = Math.floor(Math.random()*3);
-    if ((computerChoice) == 0) {computerChoice=('rock');
-}
-    else if ((computerChoice) == 1) {computerChoice=('paper');
-}
-    else {computerChoice =('scissors');
-}
+//Result Displays 
 
 //Console displays
     console.log (playRound(playerSelection, computerChoice));

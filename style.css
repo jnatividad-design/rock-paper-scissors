@@ -58,6 +58,9 @@ button {
     margin: 50px;
   }
 
+  .result {
+    font-weight: bolder;
+  }
   .playerScore {
    margin: 40px 70px;
   }
